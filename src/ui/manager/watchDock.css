@@ -1,0 +1,50 @@
+/* Last stylesheet: edge docks share WATCH_DOCK dimensions with scene framing.
+   Nothing floats over the grill or lower plaza. Text remains HTML. */
+#manager-ui .watch-top-rail{position:absolute;inset:0 0 auto;height:calc(var(--watch-desktopTop,112px) + env(safe-area-inset-top,0px));padding:calc(6px + env(safe-area-inset-top,0px)) 12px 4px;display:grid;grid-template-rows:58px 40px;gap:4px;background:#2b0c18;pointer-events:auto;box-sizing:border-box;overflow:hidden;contain:layout paint}
+#manager-ui .desktop-broadcast{position:static!important;width:100%!important;height:58px;min-width:0;visibility:visible!important}
+#manager-ui .desktop-broadcast>.watch-panel{position:relative;height:58px;padding:4px 10px;margin:0}
+#manager-ui .watch-header{height:18px;line-height:18px;margin:0;padding:0;width:calc(100% - 240px);font-size:12px}
+#manager-ui .watch-header button{display:none}
+#manager-ui .watch-metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin:0}
+#manager-ui .watch-metric{min-width:0;display:flex;align-items:center;gap:7px;height:28px;overflow:hidden}
+#manager-ui .watch-metric>span{font-size:11px;white-space:nowrap}
+#manager-ui .watch-metric>strong{font-size:17px;white-space:nowrap}
+#manager-ui .manager-compact-goal{position:absolute;right:12px;top:4px;margin:0;width:230px;font-size:10px;line-height:13px}
+#manager-ui .manager-compact-goal progress{height:3px;margin-top:1px}
+#manager-ui .watch-tools{display:grid;grid-template-columns:minmax(0,1fr) 336px;gap:8px;min-width:0;height:40px}
+#manager-ui .watch-tools>.watch-ticker{height:40px;min-height:0;padding:2px 8px 2px 40px;overflow:hidden;min-width:0;gap:6px}
+#manager-ui .watch-ticker p{font-size:13px;min-width:0}
+#manager-ui .watch-tools>.watch-buttons{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;height:40px;min-height:0;width:100%;padding:0;flex-wrap:nowrap}
+#manager-ui .watch-buttons>button{display:flex!important;align-items:center;justify-content:center;min-width:0!important;min-height:40px!important;height:40px;padding:0!important;font-size:12px!important;overflow:hidden;white-space:nowrap}
+#manager-ui .watch-buttons>button[aria-label='Open Manager']{border-width:0!important;background:#4a1927;border-radius:3px}
+#manager-ui .watch-buttons .kit-icon{width:27px!important;height:26px!important}
+#manager-ui .watch-bottom-rail{position:absolute;inset:auto 0 0;height:calc(var(--watch-bottom,52px) + env(safe-area-inset-bottom,0px));padding:3px 12px calc(4px + env(safe-area-inset-bottom,0px));display:block;background:#2b0c18;border-top:1px solid #c89a4855;overflow:hidden;contain:layout paint}
+#manager-ui .watch-bottom-rail>.watch-strip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;height:44px;min-height:0;width:100%;padding:0;margin:0;overflow:hidden;border:0}
+#manager-ui .watch-strip::after{display:none}
+#manager-ui .watch-strip>.watch-crew{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:5px;padding:0;min-width:0;min-height:44px!important;height:44px;overflow:hidden}
+#manager-ui .watch-crew>.crew-portrait{height:30px!important;width:30px!important}
+#manager-ui .watch-crew>div{min-width:0}
+#manager-ui .watch-crew strong{font-size:12px;line-height:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#manager-ui .watch-crew span{font-size:10px;line-height:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body[data-quad-mode=watch] #view{clip-path:inset(calc(var(--watch-desktopTop,112px) + env(safe-area-inset-top,0px)) 0 calc(var(--watch-bottom,52px) + env(safe-area-inset-bottom,0px)) 0)}
+@media(max-width:900px) and (min-width:601px){#manager-ui .watch-metric{gap:3px}#manager-ui .watch-metric>span{font-size:9px}#manager-ui .watch-metric>strong{font-size:14px}}
+@media(max-width:600px){
+ #manager-ui .watch-top-rail{height:calc(var(--watch-phoneTop,144px) + env(safe-area-inset-top,0px));padding-top:calc(6px + env(safe-area-inset-top,0px));grid-template-rows:48px 80px}
+ #manager-ui .desktop-broadcast,#manager-ui .desktop-broadcast>.watch-panel{height:48px}
+ #manager-ui .desktop-broadcast>.watch-panel{padding:4px 8px}
+ #manager-ui .watch-header,#manager-ui .watch-metrics,#manager-ui .manager-compact-goal{display:none}
+ #manager-ui .phone-stats{display:grid;height:38px}
+ #manager-ui .watch-tools{height:80px;grid-template-columns:minmax(0,1fr);grid-template-rows:44px 32px;gap:4px}
+ #manager-ui .watch-tools>.watch-buttons{grid-row:1;height:44px}
+ #manager-ui .watch-buttons>button{height:44px;min-height:44px!important}
+ #manager-ui .watch-tools>.watch-ticker{grid-row:2;height:32px}
+ #manager-ui .watch-ticker button{height:28px!important;min-height:28px!important}
+ #manager-ui .watch-ticker .crew-portrait{width:26px!important;height:26px!important}
+ #manager-ui .watch-ticker p{font-size:12px}
+ #manager-ui .watch-strip>.watch-crew{flex-direction:column;gap:0;text-align:center}
+ #manager-ui .watch-crew>.crew-portrait{height:26px!important;width:26px!important}
+ #manager-ui .watch-crew>div{width:100%}
+ #manager-ui .watch-crew strong{font-size:9px;line-height:11px}
+ #manager-ui .watch-crew span{display:none}
+ body[data-quad-mode=watch] #view{clip-path:inset(calc(var(--watch-phoneTop,144px) + env(safe-area-inset-top,0px)) 0 calc(var(--watch-bottom,52px) + env(safe-area-inset-bottom,0px)) 0)}
+}

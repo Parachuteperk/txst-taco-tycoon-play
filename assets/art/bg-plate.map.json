@@ -1,0 +1,81 @@
+{
+  "note": "Plate-pixel anchors. Zoom 1 covers the viewport. The close camera is the default; Big Rush eases back to zoom 1 so more of the plate shows without letterboxing. Customers use the painted sheet and the line stays in the plaza, down and right of the service window.",
+  "plate": { "w": 1672, "h": 941 },
+  "sprite": {
+    "headPx": 96,
+    "bodyPx": 350,
+    "standPx": 160,
+    "custScale": 0.68,
+    "bob": 2.2,
+    "workFps": 3.2,
+    "rimRadius": 460
+  },
+  "framing": {
+    "desktop": { "focus": [1010, 540], "zoom": 1.22 },
+    "phone": { "focus": [940, 520], "zoom": 1 },
+    "rush": { "focus": [900, 520], "zoom": 1 },
+    "rushPhone": { "focus": [940, 520], "zoom": 1 }
+  },
+  "counter": {
+    "waist": 0.55,
+    "behind": ["jared", "phillip", "ali", "matt"],
+    "top": [[820, 470], [1040, 448], [1200, 408]],
+    "poly": [[790, 455], [1040, 432], [1225, 388], [1235, 530], [1040, 585], [785, 610]]
+  },
+  "tagBias": { "jared": 2, "phillip": -24, "ali": 6, "matt": -20, "aaron": -12, "west": 46, "antonio": 8, "dale": 0 },
+  "stations": {
+    "jared":   { "x": 849,  "y": 539, "i": 0.75,  "j": 0.2,  "slot": [802, 892] },
+    "phillip": { "x": 934,  "y": 537, "i": 2.25,  "j": 0.2,  "slot": [893, 976] },
+    "ali":     { "x": 1032, "y": 522, "i": 3.75,  "j": 0.2,  "slot": [977, 1087] },
+    "matt":    { "x": 1136, "y": 496, "i": 5.25,  "j": 0.2,  "slot": [1088, 1188] },
+    "aaron":   { "x": 760,  "y": 660, "i": 7.0,   "j": -2.4 },
+    "antonio": { "x": 900,  "y": 760, "i": -2.85, "j": -1.65 },
+    "west":    { "x": 1170, "y": 800, "i": 4.55,  "j": -0.55 },
+    "dale":    { "x": 1420, "y": 520, "i": 8.2,   "j": -1.2 }
+  },
+  "pickup": [
+    { "x": 1300, "y": 700 },
+    { "x": 1360, "y": 760 },
+    { "x": 1420, "y": 700 },
+    { "x": 1280, "y": 760 }
+  ],
+  "queueSpacing": 56,
+  "sign": { "x": 840, "y": 340, "w": 380, "h": 130 },
+  "oldMain": { "x": 1080, "y": 16, "w": 580, "h": 420 },
+  "rig": { "x": 900, "y": 760, "enabled": true, "face": "camera" },
+  "queue": [
+    { "x": 1080, "y": 900 },
+    { "x": 1480, "y": 920 },
+    { "x": 1400, "y": 860 },
+    { "x": 640, "y": 900 },
+    { "x": 560, "y": 860 }
+  ],
+  "spawnLeft": [
+    { "x": 80, "y": 880 },
+    { "x": 220, "y": 900 },
+    { "x": 480, "y": 910 }
+  ],
+  "spawnRight": [
+    { "x": 1600, "y": 880 },
+    { "x": 1480, "y": 820 },
+    { "x": 1320, "y": 880 }
+  ],
+  "exit": [
+    { "x": 1480, "y": 680 },
+    { "x": 1580, "y": 780 },
+    { "x": 1640, "y": 860 }
+  ],
+  "upgrades": {
+    "grill":    { "x": 788, "y": 492, "h": 34 },
+    "open":     { "x": 1010, "y": 308, "h": 32 },
+    "register": { "x": 790, "y": 528, "h": 24 },
+    "tip":      { "x": 824, "y": 534, "h": 22 },
+    "menu":     { "x": 220, "y": 700, "h": 72 },
+    "badge":    { "x": 1272, "y": 448, "h": 26 }
+  },
+  "expansion": { "x": 1584, "y": 548, "h": 108 },
+  "occluders": [
+    { "id": "lamp-left", "x": 70, "y": 250, "w": 54, "h": 340, "baseline": 575, "enabled": false },
+    { "id": "statue-base", "x": 40, "y": 640, "w": 250, "h": 250, "baseline": 870, "enabled": false }
+  ]
+}

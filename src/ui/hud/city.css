@@ -1,0 +1,86 @@
+/* City HUD. Docks stay on the watchFrame contract; this file only paints them. */
+#manager-ui .city-top{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;align-items:center;min-width:0;pointer-events:auto}
+#manager-ui .city-fact{min-width:0;line-height:1.1}
+#manager-ui .city-fact span{display:block;font-size:9px;letter-spacing:.4px;text-transform:uppercase;color:#ddceb5}
+#manager-ui .city-fact strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#manager-ui .city-era{display:flex;align-items:center;gap:6px;min-width:0;pointer-events:auto}
+#manager-ui .city-era progress{flex:0 0 28%;height:8px;accent-color:#e7b65a}
+#manager-ui .city-era-next{font-size:10px;line-height:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#manager-ui .city-speedbar{display:flex;min-width:0;height:44px}
+#manager-ui .city-speedbar>.watch-buttons{flex:1;min-width:0}
+#manager-ui .city-build{display:flex;flex-direction:column;gap:2px;min-height:0;min-width:0;pointer-events:auto}
+#manager-ui .city-detail{margin:0!important;font-size:11px;line-height:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#manager-ui .city-items{display:flex;gap:4px;overflow-x:auto;min-height:36px}
+#manager-ui .city-item{flex:0 0 auto;min-height:36px!important;height:36px;padding:0 8px!important;font-size:12px!important}
+#manager-ui .city-cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+#manager-ui .city-cat{min-height:44px!important;height:44px;padding:0 4px!important;font-size:13px!important}
+#manager-ui .city-cat[aria-pressed=true],#manager-ui .city-item[aria-pressed=true],#manager-ui .city-overlay.is-on{background:#815323;color:#fff0d8}
+#manager-ui .city-slots{position:absolute;z-index:3;left:0;right:0;top:calc(var(--watch-desktopTop,96px) + env(safe-area-inset-top,0px));bottom:calc(var(--watch-bottom,188px) + env(safe-area-inset-bottom,0px));pointer-events:none}
+#manager-ui .city-slot{position:absolute;width:44px;height:44px;min-height:44px!important;transform:translate(-50%,-50%);pointer-events:auto;border-radius:22px;padding:0!important;font-size:11px!important}
+#manager-ui .city-slot.slot-open{box-shadow:0 0 0 3px #e7b65a}
+#manager-ui .city-slot-note{position:absolute;left:8px;right:8px;top:4px;font-size:10px;pointer-events:none}
+#manager-ui .city-overlays{position:absolute;z-index:4;left:8px;bottom:calc(var(--watch-bottom,188px) + 8px);display:flex;flex-direction:column;gap:6px;pointer-events:none;max-width:46%}
+#manager-ui .city-overlay,#manager-ui .city-line{pointer-events:auto;min-height:44px!important;height:44px;width:44px;padding:0!important;font-size:11px!important}
+#manager-ui .city-readout{pointer-events:auto;background:#2b0c18ee;border:1px solid #c89a4855;border-radius:8px;padding:6px;max-height:30vh;overflow:auto}
+#manager-ui .city-readout p{margin:2px 0!important;font-size:12px}
+#manager-ui .city-line{width:auto;min-width:44px;padding:0 8px!important}
+#manager-ui .city-inspect{position:absolute;z-index:5;left:8px;right:8px;bottom:calc(var(--watch-bottom,188px) + 8px);background:#2b0c18f2;border:1px solid #e7b65a;border-radius:10px;padding:8px 10px;pointer-events:auto;max-height:42vh;overflow:auto}
+#manager-ui .city-inspect p{margin:2px 0!important;font-size:13px}
+#manager-ui .city-kind{display:block;font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:#e7b65a}
+#manager-ui .city-inspect-actions{display:flex;gap:6px}
+#manager-ui .watch-ticker{overflow:hidden}
+#manager-ui .watch-ticker p{flex:1 1 auto;min-width:0;overflow:hidden}
+#manager-ui .watch-ticker button{position:relative;z-index:3;flex:0 0 auto}
+#manager-ui .news-track{pointer-events:none;max-width:100%;overflow:hidden}
+#manager-ui[data-mode=manager] .manager-shell{bottom:calc(var(--watch-bottom,188px) + env(safe-area-inset-bottom,0px))}
+body[data-quad-mode=manager] #view{clip-path:inset(calc(var(--watch-desktopTop,96px) + env(safe-area-inset-top,0px)) min(430px,40vw) calc(var(--watch-bottom,188px) + env(safe-area-inset-bottom,0px)) 0)}
+#manager-ui .f1-dash{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:0 0 8px}
+#manager-ui .f1-stations{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+#manager-ui .f1-fact,#manager-ui .f1-station{background:#3a1420;border-radius:6px;padding:4px 6px;min-width:0}
+#manager-ui .f1-fact span,#manager-ui .f1-station span{display:block;font-size:9px;letter-spacing:.4px;text-transform:uppercase;color:#ddceb5}
+#manager-ui .f1-fact strong,#manager-ui .f1-station strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#manager-ui .f1-station small{display:block;font-size:10px;color:#e7b65a}
+#manager-ui .crew-tree{display:flex;flex-direction:column}
+#manager-ui .signature-card{border:1px solid #c89a48;border-radius:8px;padding:8px;margin:6px 0;background:#3a142066}
+#manager-ui .skill-node{border-top:1px solid #c89a4833;padding:6px 0}
+#manager-ui .skill-node.is-top{order:-1;border:1px solid #7eb6ff;border-radius:8px;padding:6px 8px;margin-bottom:6px}
+#manager-ui .skill-node.is-capstone{box-shadow:inset 0 0 0 1px #e7b65a}
+#manager-ui .node-buy,#manager-ui .cut-loose{min-height:44px}
+#manager-ui .upgrade-badge{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;margin-left:6px;padding:0 5px;border-radius:9px;background:#e7b65a;color:#2b0c18;font-size:11px;font-weight:700}
+#manager-ui .campus-map{position:relative;height:120px;background:#1d3a28;border-radius:8px;margin:6px 0}
+#manager-ui .map-spot{position:absolute;font-size:10px;transform:translate(-50%,-50%);white-space:nowrap}
+#manager-ui .map-spot.has-flag{color:#e7b65a;font-weight:700}
+#manager-ui .spark{width:100%;height:42px;color:#e7b65a;display:block}
+#manager-ui .surge-cap,#manager-ui .vault-slider{width:100%;min-height:44px}
+#manager-ui .grackle-yard,#manager-ui .sack-circle{position:relative;height:72px;margin:6px 0;background:#1d3a28;border-radius:8px;overflow:hidden}
+#manager-ui .grackle,#manager-ui .sack-dot{position:absolute;width:10px;height:10px;border-radius:50%;background:#1a1a1a}
+#manager-ui .sack-dot{background:#c45c26}
+#manager-ui .offer-card{position:absolute;z-index:6;right:8px;top:calc(var(--watch-desktopTop,96px) + 8px);width:min(320px,calc(100% - 16px));background:#2b0c18f2;border:1px solid #e7b65a;border-radius:12px;padding:10px;pointer-events:auto}
+#manager-ui .offer-actions{display:flex;gap:6px}
+#manager-ui .offer-ring{width:36px;height:36px}
+#manager-ui .vault-grid{display:grid;gap:8px}
+#manager-ui .city-vault{min-height:28px!important;height:28px;padding:0 4px!important;font-size:12px!important}
+#manager-ui .watch-ticker button[hidden]{display:none!important}
+#manager-ui .chart-labels{flex-wrap:nowrap;align-items:baseline;gap:6px;font-size:10px;line-height:13px;overflow:hidden}
+#manager-ui .chart-labels span{white-space:nowrap;flex:0 0 auto}
+#manager-ui .desktop-broadcast{display:none}
+@media(max-width:600px){
+ #manager-ui .watch-top-rail{grid-template-rows:34px 12px minmax(0,1fr);padding-top:env(safe-area-inset-top,0px)}
+ #manager-ui .watch-tools{height:auto;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+ #manager-ui .watch-tools>.watch-ticker{grid-row:1;height:100%}
+ #manager-ui .city-slots{top:calc(var(--watch-phoneTop,72px) + env(safe-area-inset-top,0px))}
+ #manager-ui .city-fact strong{font-size:12px}
+ #manager-ui[data-mode=manager] .strategy-copy{display:none}
+ #manager-ui[data-mode=manager] .strategy-side .crew-portrait{width:36px!important;height:36px!important}
+ #manager-ui[data-mode=manager] .policy-segments{margin:0 0 6px}
+ #manager-ui[data-mode=manager] .policy-segments legend{font-size:12px;margin-bottom:2px}
+ #manager-ui[data-mode=manager] .policy-segments button{min-height:32px!important;height:32px;font-size:12px;line-height:14px;padding:0 4px!important}
+ #manager-ui[data-mode=manager] .manager-card>button{min-height:32px!important;height:32px}
+ #manager-ui[data-mode=manager] .manager-card p{margin:4px 0}
+ #manager-ui[data-mode=manager] .manager-shell header{height:40px;min-height:0;padding:0;overflow:hidden}
+ #manager-ui[data-mode=manager] .manager-tabs{height:36px;min-height:36px;padding:0}
+ #manager-ui[data-mode=manager] .manager-shell{inset:auto 0 calc(var(--watch-bottom,188px) + env(safe-area-inset-bottom,0px));width:100%;height:calc(50vh + 92px);max-height:calc(100% - var(--watch-phoneTop,72px) - var(--watch-bottom,188px) - 8px)}
+ #manager-ui[data-mode=manager] .manager-body{flex:1 1 auto;min-height:0;height:auto;overflow:auto}
+ #manager-ui .offer-card{top:auto;bottom:calc(var(--watch-bottom,188px) + 50vh + 100px);left:8px;right:8px;width:auto}
+ body[data-quad-mode=manager] #view{clip-path:inset(calc(var(--watch-phoneTop,72px) + env(safe-area-inset-top,0px)) 0 calc(var(--watch-bottom,188px) + 50vh + 92px + env(safe-area-inset-bottom,0px)) 0)}
+}

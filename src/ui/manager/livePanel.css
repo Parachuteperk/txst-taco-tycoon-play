@@ -1,0 +1,41 @@
+/* Keep Manager and the scene in disjoint rectangles defined by watchFrame. */
+#manager-ui[data-mode=manager]{background:transparent}
+#manager-ui[data-mode=manager] .manager-shell{inset:calc(var(--watch-desktopTop,112px) + env(safe-area-inset-top,0px)) 0 calc(52px + env(safe-area-inset-bottom,0px)) auto;width:min(430px,40vw);padding:10px;box-sizing:border-box;background:#270d19}
+#manager-ui[data-mode=manager] .manager-shell header{gap:4px;padding-bottom:4px;flex-wrap:nowrap}
+#manager-ui[data-mode=manager] .manager-shell h1{font-size:20px;margin:2px 0}
+#manager-ui[data-mode=manager] .manager-subtitle{font-size:11px;letter-spacing:0}
+#manager-ui[data-mode=manager] .manager-actions{padding:0;flex-wrap:nowrap;width:auto;gap:2px}
+#manager-ui[data-mode=manager] .manager-actions button{font-size:12px;padding:2px;min-height:36px}
+#manager-ui[data-mode=manager] .kit-crest{display:none}
+#manager-ui[data-mode=manager] .manager-tabs{gap:2px;padding:3px 0;min-height:44px}
+#manager-ui[data-mode=manager] .manager-tabs button{font-size:11px!important;min-height:44px;line-height:14px}
+#manager-ui[data-mode=manager] .manager-tabs button>.kit-icon{height:24px!important}
+#manager-ui[data-mode=manager] .manager-status{min-height:0;padding:0;font-size:12px}
+#manager-ui[data-mode=manager] .manager-grid{grid-template-columns:minmax(0,1fr);gap:8px}
+#manager-ui[data-mode=manager] .manager-card{padding:9px}
+#manager-ui .policy-segments{border:0;padding:0;margin:0 0 12px;display:flex;gap:4px;flex-wrap:wrap}
+#manager-ui .policy-segments legend{font-size:14px;margin-bottom:5px;font-weight:700}
+#manager-ui .policy-segments button{flex:1;min-width:65px;padding:2px 5px!important;font-size:14px;line-height:18px}
+#manager-ui .policy-segments button[aria-pressed=true]{border-image-source:var(--kit-buttonHover);color:#321b11;text-shadow:none}
+#manager-ui .strategy-automation summary{cursor:pointer;font-weight:700;padding:10px 0;min-height:24px}
+#manager-ui .perk-pending{color:#ffda79;font-size:12px;grid-column:1/-1}
+#manager-ui [role=tab][data-pending]:not([data-pending='0'])::after{content:attr(data-pending);color:#2b0c18;background:#ffda79;border-radius:10px;padding:0 5px;font-size:10px;position:absolute;right:0;top:0}
+#manager-ui [role=tab]{position:relative}
+#manager-ui .chart-labels{display:flex;justify-content:space-between;font-size:12px;gap:12px}
+#manager-ui .hour-row{display:grid;grid-template-columns:32px 1fr 32px;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
+#manager-ui .skip-tally{position:absolute;top:10px;left:50%;transform:translateX(-50%);background:#2b0c18;color:#ffda79;font-size:13px;padding:5px 10px;white-space:nowrap;pointer-events:none}
+#manager-ui .manager-card>button{margin:3px 0;max-width:100%;white-space:normal}
+body[data-quad-mode=manager] #view{visibility:visible;clip-path:inset(calc(var(--watch-desktopTop,112px) + env(safe-area-inset-top,0px)) min(430px,40vw) calc(52px + env(safe-area-inset-bottom,0px)) 0)}
+@media(max-width:600px){
+ #manager-ui[data-mode=manager] .manager-shell{inset:auto 0 calc(52px + env(safe-area-inset-bottom,0px));width:100%;height:min(336px,42vh);padding:5px 8px;border-width:7px;border-image-width:7px}
+ #manager-ui[data-mode=manager] .manager-shell h1{font-size:16px}
+ #manager-ui[data-mode=manager] .manager-actions button{font-size:11px;min-height:32px}
+ #manager-ui[data-mode=manager] .manager-subtitle{font-size:10px}
+ #manager-ui[data-mode=manager] .manager-body{padding-bottom:12px}
+ #manager-ui[data-mode=manager] .manager-tabs button>.kit-icon{height:20px!important}
+ #manager-ui[data-mode=manager] .manager-tabs button{min-height:38px;font-size:10px!important}
+ #manager-ui .skip-tally{top:calc(54px + env(safe-area-inset-top,0px));font-size:10px}
+ body[data-quad-mode=manager] #view{clip-path:inset(calc(var(--watch-phoneTop,144px) + env(safe-area-inset-top,0px)) 0 calc(52px + min(336px,42vh) + env(safe-area-inset-bottom,0px)) 0)}
+}
+
+#manager-ui .skip-tally{position:static;transform:none;flex:1;min-width:0;padding:0;background:transparent;overflow:hidden;text-overflow:ellipsis;font-size:12px}

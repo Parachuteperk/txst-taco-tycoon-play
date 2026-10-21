@@ -1,0 +1,74 @@
+/* Painted frames are border images. Text, inputs, focus and hit targets stay HTML. */
+#manager-ui{--kit-ink:#fff0cf;--kit-gold:#f4c365;color:var(--kit-ink)}
+#manager-ui[data-mode=manager],#manager-ui[data-mode=report],#manager-ui[data-mode=pause]{background:#240d16}
+#manager-ui .kit-icon{display:inline-block;vertical-align:middle;flex:0 0 auto;image-rendering:pixelated;pointer-events:none}
+#manager-ui h3>.kit-icon,#manager-ui h1>.kit-icon{margin-right:7px}
+#manager-ui .manager-shell{border:14px solid transparent;border-image:var(--kit-dashboard) 64 70 60 70 fill /14px stretch;background:none;color:#fff0cf;isolation:isolate}
+#manager-ui .manager-shell header{position:relative;border-bottom:1px solid #dba54c55;padding-bottom:13px}
+#manager-ui .manager-actions{padding-right:118px}
+#manager-ui .kit-crest{position:absolute;right:0;top:10px;width:108px!important;height:40px!important}
+#manager-ui .manager-subtitle{color:#e5be76;font-size:12px}
+#manager-ui .manager-shell h1{color:#fff0cf;text-shadow:0 2px 0 #380e19;font-weight:850}
+#manager-ui .manager-card{border:10px solid transparent;border-image:var(--kit-card) 48 46 48 46 fill /10px stretch;background:none;border-radius:0;padding:14px;color:#fff0cf}
+#manager-ui .manager-card h3{color:#ffdf97}
+#manager-ui .manager-card select{color:#fff0cf;background:#310d1b;border:1px solid #dbac60aa;border-radius:3px}
+#manager-ui .manager-card small{color:#e5cda5}
+#manager-ui .manager-notice{background:#310d1bc9;border-color:#f4c365}
+#manager-ui button:not(.watch-crew):not([role=tab]):not(.kit-speed){border:8px solid transparent;border-image:var(--kit-buttonNormal) 24 30 24 30 fill /8px 10px stretch;background:none;border-radius:0;padding:4px 12px;color:#fff0cf;box-shadow:none;text-shadow:0 1px 0 #3b111a}
+#manager-ui button:not(.watch-crew):not([role=tab]):not(.kit-speed):is(:hover,:focus-visible,.primary){border-image-source:var(--kit-buttonHover);color:#311509;text-shadow:none}
+#manager-ui button:not(.watch-crew):not([role=tab]):not(.kit-speed):disabled{border-image-source:var(--kit-buttonDisabled);color:#cab397;text-shadow:none;opacity:1}
+#manager-ui button:focus-visible,#manager-ui select:focus-visible{outline:2px solid #fff0c7;outline-offset:2px}
+#manager-ui .manager-tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;max-width:1100px;overflow:visible;padding:9px 0 12px}
+#manager-ui .manager-tabs::after{display:none}
+#manager-ui .manager-tabs button{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;min-width:0;min-height:70px;padding:0 2px 2px;border:0;border-radius:0;background:none!important;color:#e6cda8;font-size:14px;line-height:18px;box-shadow:none}
+#manager-ui .manager-tabs button>.kit-icon{display:block;width:112px!important;max-width:100%;height:48px!important;transition:filter .18s ease}
+#manager-ui .manager-tabs button[aria-selected=true]{color:#ffe1a0;text-shadow:0 0 8px #f1b84d55}
+#manager-ui .manager-tabs button:is([aria-selected=true],:hover)>.kit-icon{filter:brightness(1.2) drop-shadow(0 1px 3px #f7bc4a33)}
+#manager-ui .manager-body{scrollbar-color:#be8848 #380e1d}
+#manager-ui .staff-row{padding:9px 10px;border-width:8px;border-image-width:8px}
+#manager-ui .manager-meter>div{color:#ecd5ad}
+#manager-ui progress{accent-color:#f4c365}
+#manager-ui .manager-meter progress,#manager-ui .goal{background:#290b16;border-radius:2px}
+#manager-ui .finance-row{border-color:#c48c4244}
+#manager-ui .manager-chart{color:#f4c365}
+#manager-ui .stat{background:#3a101f;border:1px solid #c48c4244;color:#e5c99a}
+#manager-ui .stat strong{color:#fff0cf}
+/* Pseudo frames do not add layout borders to the tightly sized Watch rails. */
+#manager-ui .watch-panel{position:relative;isolation:isolate;border:1px solid transparent;border-radius:0;background:transparent;backdrop-filter:none;color:#fff0cf}
+#manager-ui .watch-panel::after{content:'';position:absolute;inset:0;z-index:-1;border:6px solid transparent;border-image:var(--kit-card) 48 46 48 46 fill /6px stretch;pointer-events:none}
+#manager-ui .watch-bottom-rail{background:#2b0c18}
+#manager-ui .watch-bottom-rail .watch-ticker{padding-left:40px}
+#manager-ui .watch-ticker::after{border-image-source:var(--kit-ticker);border-image-slice:24 130 24 110 fill;border-image-width:5px 38px 5px 32px}
+#manager-ui .watch-ticker button{border-width:4px!important;border-image-width:4px 6px!important;padding:2px 7px!important}
+#manager-ui .watch-header button{border-width:5px!important;border-image-width:5px!important;padding:3px 8px!important}
+#manager-ui .watch-buttons button.kit-speed{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:3px;border:0;border-radius:3px;background:none;color:#fff0cf;box-shadow:none;line-height:1;font-size:13px!important}
+#manager-ui .kit-speed>.kit-icon{width:32px!important;height:30px!important}
+#manager-ui .kit-speed[aria-pressed=true]{background:#e9b7511f;box-shadow:inset 0 -2px #ffd47a}
+#manager-ui .kit-speed:is(:hover,:focus-visible)>.kit-icon{filter:brightness(1.18)}
+#manager-ui .watch-metric>span>.kit-icon{margin-right:4px}
+#manager-ui .phone-stat>span>.kit-icon{margin-right:2px}
+#manager-ui .watch-ticker p{color:#fff0cf;text-shadow:0 1px #230914}
+#manager-ui .watch-crew{color:#ffe4b4}
+#manager-ui .watch-crew:focus-visible{outline-offset:-2px}
+#manager-ui .manager-compact-goal,#manager-ui .phone-stat>span{color:#ecd6ad}
+@media(max-width:600px){
+  #manager-ui .manager-shell{border-width:8px;border-image-width:8px;padding:8px;padding-top:max(8px,env(safe-area-inset-top));padding-bottom:max(8px,env(safe-area-inset-bottom))}
+  #manager-ui .manager-shell header{padding-bottom:9px}
+  #manager-ui .manager-shell header h1{padding-right:76px;font-size:26px;line-height:1.15}
+  #manager-ui .manager-subtitle{font-size:11px;letter-spacing:.3px}
+  #manager-ui .kit-crest{width:76px!important;height:29px!important;top:25px;right:0}
+  #manager-ui .manager-actions{padding-right:0;gap:5px}
+  #manager-ui .manager-actions button{font-size:14px;padding:2px 8px}
+  #manager-ui .manager-tabs{gap:2px;padding:8px 0}
+  #manager-ui .manager-tabs button{min-height:48px;font-size:12px!important;line-height:15px;padding:0;gap:1px}
+  #manager-ui .manager-tabs button>.kit-icon{width:100%!important;height:27px!important}
+  #manager-ui .manager-card{border-width:7px;border-image-width:7px;padding:9px}
+  #manager-ui .staff-row{padding:7px;border-width:6px;border-image-width:6px}
+  #manager-ui .watch-panel::after{border-image-width:4px}
+  #manager-ui .watch-ticker::after{border-image-width:4px 28px 4px 30px}
+  #manager-ui .watch-ticker::before{display:none}
+  #manager-ui .watch-buttons button.kit-speed{padding:2px!important;font-size:12px!important;gap:2px}
+  #manager-ui .kit-speed>.kit-icon{width:27px!important;height:25px!important}
+  #manager-ui .phone-stat>span{font-size:9px}
+  #manager-ui .manager-shell .season-goal-label{font-size:12px}
+}
